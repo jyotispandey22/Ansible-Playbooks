@@ -1,0 +1,11 @@
+---
+- name: Delete key AWS-Key
+  hosts: localhost
+  remote_user: centos
+  tasks:
+   - name: remove key pair by name
+     amazon.aws.ec2_key:
+       name: AWS-Key
+       region: eu-west-2
+       state: absent
+
