@@ -1,0 +1,13 @@
+---
+- name: Create new key AWS-KeyPair
+  hosts: localhost
+  remote_user: centos
+  tasks:
+   - name: create a new ec2 key pair, returns generated private key
+     amazon.aws.ec2_key:
+       name: my_keypair
+       region: eu-west-2
+       state: present
+       aws_access_key: <Please edit file and provide your awss access key>
+       aws_secret_key: <Please edit file and provide your secret key>
+       
